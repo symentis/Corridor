@@ -8,8 +8,7 @@
 
 import Foundation
 
-public struct Resolver<S, C>: ResolvesContext, CustomStringConvertible
-where S: HasContext {
+public struct Resolver<S, C>: CustomStringConvertible where S: HasContext {
 
   public typealias Context = C
   public typealias Source = S

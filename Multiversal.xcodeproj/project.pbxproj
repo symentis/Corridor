@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9C98F6F41F37160A0007317F /* Multiversal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C98F6EA1F37160A0007317F /* Multiversal.framework */; };
 		9C98F6F91F37160A0007317F /* MultiversalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F6F81F37160A0007317F /* MultiversalTests.swift */; };
-		9C98F7071F3716380007317F /* ResolvesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F7061F3716380007317F /* ResolvesContext.swift */; };
 		9C98F7091F3716610007317F /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F7081F3716610007317F /* Resolver.swift */; };
 		9C98F70B1F3716740007317F /* HasContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F70A1F3716740007317F /* HasContext.swift */; };
 		9C98F70E1F3716A50007317F /* Contexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F70D1F3716A50007317F /* Contexts.swift */; };
@@ -33,7 +32,6 @@
 		9C98F6F31F37160A0007317F /* MultiversalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiversalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C98F6F81F37160A0007317F /* MultiversalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiversalTests.swift; sourceTree = "<group>"; };
 		9C98F6FA1F37160A0007317F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C98F7061F3716380007317F /* ResolvesContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolvesContext.swift; sourceTree = "<group>"; };
 		9C98F7081F3716610007317F /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		9C98F70A1F3716740007317F /* HasContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasContext.swift; sourceTree = "<group>"; };
 		9C98F70D1F3716A50007317F /* Contexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contexts.swift; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				9C98F6EE1F37160A0007317F /* Info.plist */,
-				9C98F7061F3716380007317F /* ResolvesContext.swift */,
 				9C98F7081F3716610007317F /* Resolver.swift */,
 				9C98F70A1F3716740007317F /* HasContext.swift */,
 			);
@@ -219,7 +216,6 @@
 			files = (
 				9C98F70B1F3716740007317F /* HasContext.swift in Sources */,
 				9C98F7091F3716610007317F /* Resolver.swift in Sources */,
-				9C98F7071F3716380007317F /* ResolvesContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
