@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MultiversalDemo.playground">
+      location = "group:AnyWorld.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Multiversal.xcodeproj">
+      location = "group:AnyWorldDemo.playground">
    </FileRef>
 </Workspace>

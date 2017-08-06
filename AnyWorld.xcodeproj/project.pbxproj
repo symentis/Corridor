@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C89510C1F3723FC005EE544 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9C89510B1F3723FC005EE544 /* .swiftlint.yml */; };
-		9C98F6F41F37160A0007317F /* Multiversal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C98F6EA1F37160A0007317F /* Multiversal.framework */; };
+		9C98F6F41F37160A0007317F /* AnyWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C98F6EA1F37160A0007317F /* AnyWorld.framework */; };
 		9C98F6F91F37160A0007317F /* MultiversalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F6F81F37160A0007317F /* MultiversalTests.swift */; };
 		9C98F7091F3716610007317F /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F7081F3716610007317F /* Resolver.swift */; };
 		9C98F70B1F3716740007317F /* HasContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F70A1F3716740007317F /* HasContext.swift */; };
@@ -29,9 +29,9 @@
 
 /* Begin PBXFileReference section */
 		9C89510B1F3723FC005EE544 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
-		9C98F6EA1F37160A0007317F /* Multiversal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Multiversal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C98F6EA1F37160A0007317F /* AnyWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnyWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C98F6EE1F37160A0007317F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C98F6F31F37160A0007317F /* MultiversalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiversalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C98F6F31F37160A0007317F /* AnyWorldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnyWorldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C98F6F81F37160A0007317F /* MultiversalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiversalTests.swift; sourceTree = "<group>"; };
 		9C98F6FA1F37160A0007317F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C98F7081F3716610007317F /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C98F6F41F37160A0007317F /* Multiversal.framework in Frameworks */,
+				9C98F6F41F37160A0007317F /* AnyWorld.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,8 +73,8 @@
 		9C98F6EB1F37160A0007317F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9C98F6EA1F37160A0007317F /* Multiversal.framework */,
-				9C98F6F31F37160A0007317F /* MultiversalTests.xctest */,
+				9C98F6EA1F37160A0007317F /* AnyWorld.framework */,
+				9C98F6F31F37160A0007317F /* AnyWorldTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,9 +122,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9C98F6E91F37160A0007317F /* Multiversal */ = {
+		9C98F6E91F37160A0007317F /* AnyWorld */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C98F6FE1F37160A0007317F /* Build configuration list for PBXNativeTarget "Multiversal" */;
+			buildConfigurationList = 9C98F6FE1F37160A0007317F /* Build configuration list for PBXNativeTarget "AnyWorld" */;
 			buildPhases = (
 				9C98F6E51F37160A0007317F /* Sources */,
 				9C98F6E61F37160A0007317F /* Frameworks */,
@@ -136,14 +136,14 @@
 			);
 			dependencies = (
 			);
-			name = Multiversal;
+			name = AnyWorld;
 			productName = Multiversal;
-			productReference = 9C98F6EA1F37160A0007317F /* Multiversal.framework */;
+			productReference = 9C98F6EA1F37160A0007317F /* AnyWorld.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9C98F6F21F37160A0007317F /* MultiversalTests */ = {
+		9C98F6F21F37160A0007317F /* AnyWorldTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C98F7011F37160A0007317F /* Build configuration list for PBXNativeTarget "MultiversalTests" */;
+			buildConfigurationList = 9C98F7011F37160A0007317F /* Build configuration list for PBXNativeTarget "AnyWorldTests" */;
 			buildPhases = (
 				9C98F6EF1F37160A0007317F /* Sources */,
 				9C98F6F01F37160A0007317F /* Frameworks */,
@@ -154,9 +154,9 @@
 			dependencies = (
 				9C98F6F61F37160A0007317F /* PBXTargetDependency */,
 			);
-			name = MultiversalTests;
+			name = AnyWorldTests;
 			productName = MultiversalTests;
-			productReference = 9C98F6F31F37160A0007317F /* MultiversalTests.xctest */;
+			productReference = 9C98F6F31F37160A0007317F /* AnyWorldTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -178,7 +178,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9C98F6E41F37160A0007317F /* Build configuration list for PBXProject "Multiversal" */;
+			buildConfigurationList = 9C98F6E41F37160A0007317F /* Build configuration list for PBXProject "AnyWorld" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -190,8 +190,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9C98F6E91F37160A0007317F /* Multiversal */,
-				9C98F6F21F37160A0007317F /* MultiversalTests */,
+				9C98F6E91F37160A0007317F /* AnyWorld */,
+				9C98F6F21F37160A0007317F /* AnyWorldTests */,
 			);
 		};
 /* End PBXProject section */
@@ -257,7 +257,7 @@
 /* Begin PBXTargetDependency section */
 		9C98F6F61F37160A0007317F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9C98F6E91F37160A0007317F /* Multiversal */;
+			target = 9C98F6E91F37160A0007317F /* AnyWorld */;
 			targetProxy = 9C98F6F51F37160A0007317F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -389,7 +389,7 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.symentis.Multiversal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.symentis.AnyWorld;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -411,7 +411,7 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.symentis.Multiversal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.symentis.AnyWorld;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -450,7 +450,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9C98F6E41F37160A0007317F /* Build configuration list for PBXProject "Multiversal" */ = {
+		9C98F6E41F37160A0007317F /* Build configuration list for PBXProject "AnyWorld" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C98F6FC1F37160A0007317F /* Debug */,
@@ -459,7 +459,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C98F6FE1F37160A0007317F /* Build configuration list for PBXNativeTarget "Multiversal" */ = {
+		9C98F6FE1F37160A0007317F /* Build configuration list for PBXNativeTarget "AnyWorld" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C98F6FF1F37160A0007317F /* Debug */,
@@ -468,7 +468,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C98F7011F37160A0007317F /* Build configuration list for PBXNativeTarget "MultiversalTests" */ = {
+		9C98F7011F37160A0007317F /* Build configuration list for PBXNativeTarget "AnyWorldTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C98F7021F37160A0007317F /* Debug */,

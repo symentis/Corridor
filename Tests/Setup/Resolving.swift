@@ -1,12 +1,12 @@
 //
 //  Resolving.swift
-//  MultiversalTests
+//  AnyWorldTests
 //
 //  Created by Elmar Kretzer on 06.08.17.
 //  Copyright © 2017 Elmar Kretzer. All rights reserved.
 //
 
-import Multiversal
+import AnyWorld
 import Foundation
 
 extension HasContext {

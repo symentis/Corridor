@@ -1,15 +1,15 @@
 //
-//  MultiversalTests.swift
-//  MultiversalTests
+//  AnyWorldTests.swift
+//  AnyWorldTests
 //
 //  Created by Elmar Kretzer on 06.08.17.
 //  Copyright © 2017 Elmar Kretzer. All rights reserved.
 //
 
 import XCTest
-import Multiversal
+import AnyWorld
 
-class MultiversalTests: XCTestCase {
+class AnyWorldTests: XCTestCase {
 
     func testNested() {
       let t = AType()
