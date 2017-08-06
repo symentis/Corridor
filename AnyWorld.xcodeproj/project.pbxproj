@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C394FB01F372CF00008C4FC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9C394FAF1F372CF00008C4FC /* README.md */; };
 		9C89510C1F3723FC005EE544 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9C89510B1F3723FC005EE544 /* .swiftlint.yml */; };
 		9C98F6F41F37160A0007317F /* AnyWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C98F6EA1F37160A0007317F /* AnyWorld.framework */; };
-		9C98F6F91F37160A0007317F /* MultiversalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F6F81F37160A0007317F /* MultiversalTests.swift */; };
+		9C98F6F91F37160A0007317F /* NestedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F6F81F37160A0007317F /* NestedTests.swift */; };
 		9C98F7091F3716610007317F /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F7081F3716610007317F /* Resolver.swift */; };
 		9C98F70B1F3716740007317F /* HasContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F70A1F3716740007317F /* HasContext.swift */; };
 		9C98F70E1F3716A50007317F /* Contexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F70D1F3716A50007317F /* Contexts.swift */; };
@@ -28,11 +29,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C394FAF1F372CF00008C4FC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9C89510B1F3723FC005EE544 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9C98F6EA1F37160A0007317F /* AnyWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnyWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C98F6EE1F37160A0007317F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C98F6F31F37160A0007317F /* AnyWorldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnyWorldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C98F6F81F37160A0007317F /* MultiversalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiversalTests.swift; sourceTree = "<group>"; };
+		9C98F6F81F37160A0007317F /* NestedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTests.swift; sourceTree = "<group>"; };
 		9C98F6FA1F37160A0007317F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C98F7081F3716610007317F /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		9C98F70A1F3716740007317F /* HasContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasContext.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		9C98F6E01F37160A0007317F = {
 			isa = PBXGroup;
 			children = (
+				9C394FAF1F372CF00008C4FC /* README.md */,
 				9C98F6EC1F37160A0007317F /* Sources */,
 				9C98F6F71F37160A0007317F /* Tests */,
 				9C89510B1F3723FC005EE544 /* .swiftlint.yml */,
@@ -93,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				9C98F70C1F3716880007317F /* Setup */,
-				9C98F6F81F37160A0007317F /* MultiversalTests.swift */,
+				9C98F6F81F37160A0007317F /* NestedTests.swift */,
 				9C98F6FA1F37160A0007317F /* Info.plist */,
 			);
 			path = Tests;
@@ -201,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C394FB01F372CF00008C4FC /* README.md in Resources */,
 				9C89510C1F3723FC005EE544 /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,7 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C98F6F91F37160A0007317F /* MultiversalTests.swift in Sources */,
+				9C98F6F91F37160A0007317F /* NestedTests.swift in Sources */,
 				9C98F70E1F3716A50007317F /* Contexts.swift in Sources */,
 				9C98F7101F3716BD0007317F /* Resolving.swift in Sources */,
 				9C98F7121F3716D20007317F /* Types.swift in Sources */,
