@@ -15,4 +15,3 @@ struct Nested: HasContext {
 struct AType: HasContext {
   var resolve = `default`
 }
- 
