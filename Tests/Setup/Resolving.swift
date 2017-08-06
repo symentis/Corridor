@@ -27,6 +27,7 @@ extension HasContext where Source == AType, Context == MyContext {
 }
 
 extension HasContext where Source == Nested, Context == MyContext {
+
   var now: Date {
     return resolve[\.now]
   }
