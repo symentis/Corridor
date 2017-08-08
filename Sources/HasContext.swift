@@ -19,12 +19,19 @@
 ///       var resolver = `default`
 ///     }
 ///
-public protocol HasContext {
 
+public protocol ContextAware {
+   associatedtype Context
+}
+
+public protocol HasContext: ContextAware {
   associatedtype Source = Self
-  associatedtype Context
-
   var resolve: Resolver<Self, Context> { get set }
+}
+
+public protocol HasStaticContext: ContextAware {
+  associatedtype Source = Self
+  static var resolve: StaticResolver<Self, Context> { get set }
 }
 
 /// A function to apply a new Context
@@ -32,4 +39,9 @@ public func withContext<T: HasContext>(_ t: T, _ c: T.Context) -> T {
   var tx = t
   tx.resolve.apply(c)
   return tx
+}
+
+/// A function to apply a new Context
+public func withStaticContext<T: HasStaticContext>(_ t: T.Type, _ c: T.Context) {
+  T.resolve.apply(c)
 }

@@ -17,6 +17,13 @@ class AnyWorldTests: XCTestCase {
 
       let m = withContext(AType(), Mock())
       assert(m.nested.now == Date.distantPast)
+
+      print(StaticType.nested.now)
+      assert(StaticType.nested.now.timeIntervalSince(Date()) < 0.0)
+
+      StaticType.resolve = StaticResolver(context: Mock())
+      print(StaticType.resolve)
+      assert(StaticType.nested.now == Date.distantPast)
     }
 
 }

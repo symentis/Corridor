@@ -16,6 +16,7 @@
 		9C98F70E1F3716A50007317F /* Contexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F70D1F3716A50007317F /* Contexts.swift */; };
 		9C98F7101F3716BD0007317F /* Resolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F70F1F3716BD0007317F /* Resolving.swift */; };
 		9C98F7121F3716D20007317F /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F7111F3716D20007317F /* Types.swift */; };
+		C5EEFCFC1F3A0E2A00C48921 /* StaticResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EEFCFB1F3A0E2A00C48921 /* StaticResolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +33,6 @@
 		9C394FAF1F372CF00008C4FC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9C89510B1F3723FC005EE544 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9C98F6EA1F37160A0007317F /* AnyWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnyWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C98F6EE1F37160A0007317F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C98F6F31F37160A0007317F /* AnyWorldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnyWorldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C98F6F81F37160A0007317F /* NestedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTests.swift; sourceTree = "<group>"; };
 		9C98F6FA1F37160A0007317F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,6 +41,7 @@
 		9C98F70D1F3716A50007317F /* Contexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contexts.swift; sourceTree = "<group>"; };
 		9C98F70F1F3716BD0007317F /* Resolving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolving.swift; sourceTree = "<group>"; };
 		9C98F7111F3716D20007317F /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		C5EEFCFB1F3A0E2A00C48921 /* StaticResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticResolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +86,7 @@
 		9C98F6EC1F37160A0007317F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				9C98F6EE1F37160A0007317F /* Info.plist */,
+				C5EEFCFB1F3A0E2A00C48921 /* StaticResolver.swift */,
 				9C98F7081F3716610007317F /* Resolver.swift */,
 				9C98F70A1F3716740007317F /* HasContext.swift */,
 			);
@@ -240,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5EEFCFC1F3A0E2A00C48921 /* StaticResolver.swift in Sources */,
 				9C98F70B1F3716740007317F /* HasContext.swift in Sources */,
 				9C98F7091F3716610007317F /* Resolver.swift in Sources */,
 			);
@@ -390,7 +392,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -413,7 +414,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
