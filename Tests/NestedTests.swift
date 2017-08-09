@@ -11,19 +11,19 @@ import AnyWorld
 
 class AnyWorldTests: XCTestCase {
 
-    func testNested() {
+    func testInstanceNested() {
       let t = AType()
-      assert(t.nested.now.timeIntervalSince(Date()) < 0.000)
+      assert(t.nested.now.timeIntervalSince(Date()) < 0.001)
 
       let m = withContext(AType(), Mock())
       assert(m.nested.now == Date.distantPast)
-
-      print(StaticType.nested.now)
-      assert(StaticType.nested.now.timeIntervalSince(Date()) < 0.0)
-
-      StaticType.resolve = StaticResolver(context: Mock())
-      print(StaticType.resolve)
-      assert(StaticType.nested.now == Date.distantPast)
     }
+
+  func testStaticNested() {
+    assert(StaticType.nested.now.timeIntervalSince(Date()) < 0.001)
+
+    withContext(StaticType.self, Mock())
+    assert(StaticType.nested.now == Date.distantPast)
+  }
 
 }

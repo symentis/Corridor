@@ -16,7 +16,6 @@
 		9C98F70E1F3716A50007317F /* Contexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F70D1F3716A50007317F /* Contexts.swift */; };
 		9C98F7101F3716BD0007317F /* Resolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F70F1F3716BD0007317F /* Resolving.swift */; };
 		9C98F7121F3716D20007317F /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F7111F3716D20007317F /* Types.swift */; };
-		C5EEFCFC1F3A0E2A00C48921 /* StaticResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EEFCFB1F3A0E2A00C48921 /* StaticResolver.swift */; };
 		C5EEFCFE1F3AEC2C00C48921 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5EEFCFD1F3AEC2B00C48921 /* Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +41,6 @@
 		9C98F70D1F3716A50007317F /* Contexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contexts.swift; sourceTree = "<group>"; };
 		9C98F70F1F3716BD0007317F /* Resolving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolving.swift; sourceTree = "<group>"; };
 		9C98F7111F3716D20007317F /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
-		C5EEFCFB1F3A0E2A00C48921 /* StaticResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticResolver.swift; sourceTree = "<group>"; };
 		C5EEFCFD1F3AEC2B00C48921 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +86,6 @@
 		9C98F6EC1F37160A0007317F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				C5EEFCFB1F3A0E2A00C48921 /* StaticResolver.swift */,
 				C5EEFCFD1F3AEC2B00C48921 /* Info.plist */,
 				9C98F7081F3716610007317F /* Resolver.swift */,
 				9C98F70A1F3716740007317F /* HasContext.swift */,
@@ -245,7 +242,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5EEFCFC1F3A0E2A00C48921 /* StaticResolver.swift in Sources */,
 				9C98F70B1F3716740007317F /* HasContext.swift in Sources */,
 				9C98F7091F3716610007317F /* Resolver.swift in Sources */,
 			);

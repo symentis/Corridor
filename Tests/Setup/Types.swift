@@ -8,11 +8,11 @@
 
 import AnyWorld
 
-struct Nested: HasContext {
+struct Nested: HasInstanceContext {
   var resolve = `default`
 }
 
-struct AType: HasContext {
+struct AType: HasInstanceContext {
   var resolve = `default`
 }
 

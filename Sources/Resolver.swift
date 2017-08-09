@@ -31,17 +31,31 @@ public struct Resolver<S, C>: CustomStringConvertible where S: HasContext {
     self.context = context
   }
 
+  // --------------------------------------------------------------------------------
+  // MARK: - Subscripting
+  // --------------------------------------------------------------------------------
+
   /// Subscripting any regular Type from the Context.
   public subscript<D>(_ k: KeyPath<C, D>) -> D {
     return context[keyPath: k]
   }
 
-  /// Subscripting an Type that conforms to `HasContext` from the Context.
-  public subscript<D>(_ k: KeyPath<C, D>) -> D where D: HasContext, D.Context == C {
+  /// Subscripting an Type that conforms to `HasInstanceContext` from the Context.
+  public subscript<D>(_ k: KeyPath<C, D>) -> D where D: HasInstanceContext, D.Context == C {
     var d = context[keyPath: k]
     d.resolve.apply(context)
     return d
   }
+
+  /// Subscripting an Type that conforms to `HasStaticContext` from the Context.
+  public subscript<D>(_ k: KeyPath<C, D>) -> D where D: HasStaticContext, D.Context == C {
+    D.resolve.apply(context)
+    return context[keyPath: k]
+  }
+
+  // --------------------------------------------------------------------------------
+  // MARK: - CustomStringConvertible
+  // --------------------------------------------------------------------------------
 
   public var description: String {
     return "Resolver with \(context)"

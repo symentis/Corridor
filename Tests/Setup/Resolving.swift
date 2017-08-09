@@ -19,28 +19,18 @@ extension HasContext {
 
 }
 
-extension HasContext where Source == AType, Context == MyContext {
+extension HasInstanceContext where Source == AType, Context == MyContext {
 
   var nested: Nested {
     return resolve[\.nested]
   }
 }
 
-extension HasContext where Source == Nested, Context == MyContext {
+extension HasInstanceContext where Source == Nested, Context == MyContext {
 
   var now: Date {
     return resolve[\.now]
   }
-}
-
-extension HasStaticContext {
-
-  typealias Context = MyContext
-
-  static var `default`: StaticResolver<Self, MyContext> {
-    return StaticResolver(context: DefaultContext())
-  }
-
 }
 
 extension HasStaticContext where Source == StaticType, Context == MyContext {
