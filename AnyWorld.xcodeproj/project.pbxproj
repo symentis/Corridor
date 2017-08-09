@@ -17,6 +17,7 @@
 		9C98F7101F3716BD0007317F /* Resolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F70F1F3716BD0007317F /* Resolving.swift */; };
 		9C98F7121F3716D20007317F /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F7111F3716D20007317F /* Types.swift */; };
 		C5EEFCFC1F3A0E2A00C48921 /* StaticResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EEFCFB1F3A0E2A00C48921 /* StaticResolver.swift */; };
+		C5EEFCFE1F3AEC2C00C48921 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5EEFCFD1F3AEC2B00C48921 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		9C98F70F1F3716BD0007317F /* Resolving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolving.swift; sourceTree = "<group>"; };
 		9C98F7111F3716D20007317F /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		C5EEFCFB1F3A0E2A00C48921 /* StaticResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticResolver.swift; sourceTree = "<group>"; };
+		C5EEFCFD1F3AEC2B00C48921 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				C5EEFCFB1F3A0E2A00C48921 /* StaticResolver.swift */,
+				C5EEFCFD1F3AEC2B00C48921 /* Info.plist */,
 				9C98F7081F3716610007317F /* Resolver.swift */,
 				9C98F70A1F3716740007317F /* HasContext.swift */,
 			);
@@ -207,6 +210,7 @@
 			files = (
 				9C394FB01F372CF00008C4FC /* README.md in Resources */,
 				9C89510C1F3723FC005EE544 /* .swiftlint.yml in Resources */,
+				C5EEFCFE1F3AEC2C00C48921 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +396,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -414,6 +419,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
