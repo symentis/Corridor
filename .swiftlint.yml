@@ -1,5 +1,5 @@
 excluded: # paths to ignore during linting. Takes precedence over `included`.
- - AnyWorldDemo.playground
+ - CorridorDemo.playground
 
 identifier_name:
   min_length: 1 # only min_length

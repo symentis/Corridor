@@ -1,7 +1,7 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
-import AnyWorld
+import Corridor
 
 // ----------------------------------------------------------------------------------------------------
 // MARK: - Context
@@ -37,14 +37,14 @@ extension HasContext {
 
 }
 
-extension HasContext where Source == AType, Context == AppContext {
+extension HasInstanceContext where Source == AType, Context == AppContext {
 
   var nested: Nested {
     return resolve[\.nested]
   }
 }
 
-extension HasContext where Source == Nested, Context == AppContext {
+extension HasInstanceContext where Source == Nested, Context == AppContext {
   var now: Date {
     return resolve[\.now]
   }
@@ -54,11 +54,11 @@ extension HasContext where Source == Nested, Context == AppContext {
 // MARK: - Types
 // ----------------------------------------------------------------------------------------------------
 
-struct Nested: HasContext {
+struct Nested: HasInstanceContext {
   var resolve = `default`
 }
 
-struct AType: HasContext {
+struct AType: HasInstanceContext {
   var resolve = `default`
 }
 

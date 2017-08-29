@@ -8,15 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		9C394FB01F372CF00008C4FC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9C394FAF1F372CF00008C4FC /* README.md */; };
-		9C89510C1F3723FC005EE544 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9C89510B1F3723FC005EE544 /* .swiftlint.yml */; };
-		9C98F6F41F37160A0007317F /* AnyWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C98F6EA1F37160A0007317F /* AnyWorld.framework */; };
+		9C98F6F41F37160A0007317F /* Corridor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C98F6EA1F37160A0007317F /* Corridor.framework */; };
 		9C98F6F91F37160A0007317F /* NestedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F6F81F37160A0007317F /* NestedTests.swift */; };
 		9C98F7091F3716610007317F /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F7081F3716610007317F /* Resolver.swift */; };
 		9C98F70B1F3716740007317F /* HasContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F70A1F3716740007317F /* HasContext.swift */; };
 		9C98F70E1F3716A50007317F /* Contexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F70D1F3716A50007317F /* Contexts.swift */; };
 		9C98F7101F3716BD0007317F /* Resolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F70F1F3716BD0007317F /* Resolving.swift */; };
 		9C98F7121F3716D20007317F /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98F7111F3716D20007317F /* Types.swift */; };
-		C5EEFCFE1F3AEC2C00C48921 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5EEFCFD1F3AEC2B00C48921 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +30,8 @@
 /* Begin PBXFileReference section */
 		9C394FAF1F372CF00008C4FC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9C89510B1F3723FC005EE544 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
-		9C98F6EA1F37160A0007317F /* AnyWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnyWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C98F6F31F37160A0007317F /* AnyWorldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnyWorldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C98F6EA1F37160A0007317F /* Corridor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Corridor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C98F6F31F37160A0007317F /* CorridorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CorridorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C98F6F81F37160A0007317F /* NestedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTests.swift; sourceTree = "<group>"; };
 		9C98F6FA1F37160A0007317F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C98F7081F3716610007317F /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
@@ -56,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C98F6F41F37160A0007317F /* AnyWorld.framework in Frameworks */,
+				9C98F6F41F37160A0007317F /* Corridor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,8 +75,8 @@
 		9C98F6EB1F37160A0007317F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9C98F6EA1F37160A0007317F /* AnyWorld.framework */,
-				9C98F6F31F37160A0007317F /* AnyWorldTests.xctest */,
+				9C98F6EA1F37160A0007317F /* Corridor.framework */,
+				9C98F6F31F37160A0007317F /* CorridorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,9 +124,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9C98F6E91F37160A0007317F /* AnyWorld */ = {
+		9C98F6E91F37160A0007317F /* Corridor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C98F6FE1F37160A0007317F /* Build configuration list for PBXNativeTarget "AnyWorld" */;
+			buildConfigurationList = 9C98F6FE1F37160A0007317F /* Build configuration list for PBXNativeTarget "Corridor" */;
 			buildPhases = (
 				9C98F6E51F37160A0007317F /* Sources */,
 				9C98F6E61F37160A0007317F /* Frameworks */,
@@ -140,14 +138,14 @@
 			);
 			dependencies = (
 			);
-			name = AnyWorld;
+			name = Corridor;
 			productName = Multiversal;
-			productReference = 9C98F6EA1F37160A0007317F /* AnyWorld.framework */;
+			productReference = 9C98F6EA1F37160A0007317F /* Corridor.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9C98F6F21F37160A0007317F /* AnyWorldTests */ = {
+		9C98F6F21F37160A0007317F /* CorridorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C98F7011F37160A0007317F /* Build configuration list for PBXNativeTarget "AnyWorldTests" */;
+			buildConfigurationList = 9C98F7011F37160A0007317F /* Build configuration list for PBXNativeTarget "CorridorTests" */;
 			buildPhases = (
 				9C98F6EF1F37160A0007317F /* Sources */,
 				9C98F6F01F37160A0007317F /* Frameworks */,
@@ -158,9 +156,9 @@
 			dependencies = (
 				9C98F6F61F37160A0007317F /* PBXTargetDependency */,
 			);
-			name = AnyWorldTests;
+			name = CorridorTests;
 			productName = MultiversalTests;
-			productReference = 9C98F6F31F37160A0007317F /* AnyWorldTests.xctest */;
+			productReference = 9C98F6F31F37160A0007317F /* CorridorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -182,7 +180,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9C98F6E41F37160A0007317F /* Build configuration list for PBXProject "AnyWorld" */;
+			buildConfigurationList = 9C98F6E41F37160A0007317F /* Build configuration list for PBXProject "Corridor" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -194,8 +192,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9C98F6E91F37160A0007317F /* AnyWorld */,
-				9C98F6F21F37160A0007317F /* AnyWorldTests */,
+				9C98F6E91F37160A0007317F /* Corridor */,
+				9C98F6F21F37160A0007317F /* CorridorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -206,8 +204,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C394FB01F372CF00008C4FC /* README.md in Resources */,
-				9C89510C1F3723FC005EE544 /* .swiftlint.yml in Resources */,
-				C5EEFCFE1F3AEC2C00C48921 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +259,7 @@
 /* Begin PBXTargetDependency section */
 		9C98F6F61F37160A0007317F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9C98F6E91F37160A0007317F /* AnyWorld */;
+			target = 9C98F6E91F37160A0007317F /* Corridor */;
 			targetProxy = 9C98F6F51F37160A0007317F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -396,7 +392,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.symentis.AnyWorld;
+				PRODUCT_BUNDLE_IDENTIFIER = com.symentis.Corridor;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -419,7 +415,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.symentis.AnyWorld;
+				PRODUCT_BUNDLE_IDENTIFIER = com.symentis.Corridor;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -458,7 +454,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9C98F6E41F37160A0007317F /* Build configuration list for PBXProject "AnyWorld" */ = {
+		9C98F6E41F37160A0007317F /* Build configuration list for PBXProject "Corridor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C98F6FC1F37160A0007317F /* Debug */,
@@ -467,7 +463,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C98F6FE1F37160A0007317F /* Build configuration list for PBXNativeTarget "AnyWorld" */ = {
+		9C98F6FE1F37160A0007317F /* Build configuration list for PBXNativeTarget "Corridor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C98F6FF1F37160A0007317F /* Debug */,
@@ -476,7 +472,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C98F7011F37160A0007317F /* Build configuration list for PBXNativeTarget "AnyWorldTests" */ = {
+		9C98F7011F37160A0007317F /* Build configuration list for PBXNativeTarget "CorridorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C98F7021F37160A0007317F /* Debug */,

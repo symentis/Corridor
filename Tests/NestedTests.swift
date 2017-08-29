@@ -1,15 +1,15 @@
 //
-//  AnyWorldTests.swift
-//  AnyWorldTests
+//  CorridorTests.swift
+//  CorridorTests
 //
 //  Created by Elmar Kretzer on 06.08.17.
 //  Copyright © 2017 Elmar Kretzer. All rights reserved.
 //
 
 import XCTest
-import AnyWorld
+import Corridor
 
-class AnyWorldTests: XCTestCase {
+class CorridorTests: XCTestCase {
 
     func testInstanceNested() {
       let t = AType()

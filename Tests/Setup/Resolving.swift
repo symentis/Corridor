@@ -1,12 +1,12 @@
 //
 //  Resolving.swift
-//  AnyWorldTests
+//  CorridorTests
 //
 //  Created by Elmar Kretzer on 06.08.17.
 //  Copyright © 2017 Elmar Kretzer. All rights reserved.
 //
 
-import AnyWorld
+import Corridor
 import Foundation
 
 extension HasContext {

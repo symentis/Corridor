@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C98F6E91F37160A0007317F"
-               BuildableName = "AnyWorld.framework"
-               BlueprintName = "AnyWorld"
-               ReferencedContainer = "container:AnyWorld.xcodeproj">
+               BuildableName = "Corridor.framework"
+               BlueprintName = "Corridor"
+               ReferencedContainer = "container:Corridor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,9 +48,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C98F6E91F37160A0007317F"
-            BuildableName = "AnyWorld.framework"
-            BlueprintName = "AnyWorld"
-            ReferencedContainer = "container:AnyWorld.xcodeproj">
+            BuildableName = "Corridor.framework"
+            BlueprintName = "Corridor"
+            ReferencedContainer = "container:Corridor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C98F6E91F37160A0007317F"
-            BuildableName = "AnyWorld.framework"
-            BlueprintName = "AnyWorld"
-            ReferencedContainer = "container:AnyWorld.xcodeproj">
+            BuildableName = "Corridor.framework"
+            BlueprintName = "Corridor"
+            ReferencedContainer = "container:Corridor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
