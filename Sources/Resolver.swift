@@ -53,6 +53,13 @@ public struct Resolver<S, C>: CustomStringConvertible where S: HasContext {
     return context[keyPath: k]
   }
 
+  /// Subscripting an Type that conforms to `HasInstanceContext` from the Context.
+  public subscript<D>(_ d: D) -> D where D: HasInstanceContext, D.Context == C {
+    var dx = d
+    dx.resolve.apply(context)
+    return dx
+  }
+
   // --------------------------------------------------------------------------------
   // MARK: - CustomStringConvertible
   // --------------------------------------------------------------------------------
