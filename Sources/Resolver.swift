@@ -20,7 +20,7 @@ public struct Resolver<S, C>: CustomStringConvertible where S: HasContext {
   public typealias Context = C
   public typealias Source = S
 
-  var context: C
+  public private(set) var context: C
 
   public init(context: C) {
     self.context = context
