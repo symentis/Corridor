@@ -34,7 +34,6 @@ class Controller: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     print(Date())
   }
-
 }
 ```
 
@@ -55,7 +54,6 @@ class Controller: UIViewController, HasInstanceContext {
   override func viewWillAppear(_ animated: Bool) {
      print(now)
   }
-
 }
 ```
 
@@ -126,7 +124,6 @@ extension HasContext {
     static var `default`: Resolver<Self, AppContext> {
        return Resolver(context: DefaultContext())
     }
-
 }
 ```
 
@@ -163,7 +160,6 @@ extension HasContext {
     static var mock: Resolver<Self, AppContext> {
         return Resolver(context: MockContext())
     }
-
 }
 
 /// Extension for TestCase (e.g. subclass of XCTestCase)
