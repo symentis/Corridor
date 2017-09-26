@@ -51,6 +51,10 @@ class Controller: UIViewController, HasInstanceContext {
 }
 ```
 
+### Playground
+
+See the provided Playground in the workspace for more examples.
+
 ### Steps to use Corridor
 
 #### Implement one protocol
