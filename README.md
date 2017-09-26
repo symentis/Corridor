@@ -1,20 +1,27 @@
+[![Build Status](https://travis-ci.org/elm4ward/Corridor.svg?branch=master)](https://travis-ci.org/elm4ward/Corridor)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![Language](https://img.shields.io/badge/language-Swift%204.0-orange.svg)
+[![@elmkretzer](https://img.shields.io/badge/twitter-@elmkretzer-blue.svg?style=flat)](http://twitter.com/elmkretzer)
+
 # Corridor
 
-## A Coreader-like Dependency Injection Style
+## A Coreader-like Dependency Injection μFramework
 
 ### Why
 
-In order to trust tests we must substitute parts of our code we do not have control over.
-Network calls, creating Dates, Keychain, DataStore directories and so forth all have one thing in common. 
+In order to write tests we must substitute parts of our code that we do not have control over such as:
+- Network
+- File system
+- Creating dates
+- Keychain
 
 __We need to substitute them in tests in order to verify assumptions.__
 
-The purpose of Corridor is:
-
-   - Provide a _common interface for things_ that need to be replaced in TestCases.
-  - Simplify _setup in TestCases_ without manually providing mocks et all.
-  - _Transparently provide the current context_ to all your Types.
-  - _Separate any kind of test related logic_ from actual running code.
+The purpose of Corridor is to:
+- Provide a _common interface for things_ that need to be replaced in TestCases
+- Simplify _setup in TestCases_ without manually providing mocks etc
+- _Transparently provide the current context_ to all your Types
+- _Separate any kind of test related logic_ from production code
 
 
 ### Usage
@@ -27,16 +34,16 @@ class Controller: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     print(Date())
   }
-
 }
 ```
 
-The Date in the example is _out of control_.
+The Date in the above example is _out of control_.  
+
 Running a test for that Controller will always result in a different Date.
 In that case the _Date_ is just a placeholder for any Coeffect.
 
-Corridor tries to solve this problem by taking the concept of a Coreader and
-turning it into a Swift friendly implementation via protocols and a single property.
+Corridor tries to solve this problem by taking the concept of a Coreader and turning it into a Swift friendly implementation via protocols and a single property.
+
 _What will it look like?_
 
 ```swift
@@ -47,7 +54,6 @@ class Controller: UIViewController, HasInstanceContext {
   override func viewWillAppear(_ animated: Bool) {
      print(now)
   }
-
 }
 ```
 
@@ -57,21 +63,18 @@ See the provided Playground in the workspace for more examples.
 
 ### Steps to use Corridor
 
-#### Implement one protocol
-_Either_ one of the two protocols provided by Corridor: `HasInstanceContext` or `HasStaticContext`.
+#### Implement a Protocol
+_Either_ one of the two protocols provided by Corridor: `HasInstanceContext` or `HasStaticContext`.  
 Or any convenience protocol that extends one of those.
 
-####  Add one property
-Any type that gets access to a injected value need to know how to resolve it.
-This is done by providing a property called _resolve_.
-By default it should be set to ```var resolve = `default` ```.
-Why the backticks?
-_default_ is a keyword and by using the backticks the property looks
-more _config-ish_.
+####  Add a Property
+Any type that needs access to an injected value also needs to know how to resolve it. This is done by providing a property called _resolve_.  
 
-#### Provide access by resolving
-In order to resolve, we need to define what can be resolved.
-You will see how resolving works in the next part.
+By default it should be set to ```var resolve = `default` ```.  
+
+**Why the backticks?**  
+_default_ is a swift keyword and by using the backticks the property looks
+more _config-ish_.
 
 ### Terminology
 
@@ -88,8 +91,8 @@ protocol AppContext {
 
 #### Context Implementation
 An implemention of a Context.
-Usually we two implementations.
-One for the running application, one for the test case.
+Usually we use two implementations.
+One for the running application, one for the test cases.
 
 ```swift
 struct DefaultContext: AppContext {
@@ -110,9 +113,7 @@ struct MockContext: AppContext {
 ```
 
 #### Resolver
-In order to provide the default resolver you must extend the base protocol in
-Corridor. This will provide a static variable called `default` of Type Resolver 
-to your Type in order to provide access.
+In order to provide the default resolver you must extend the base protocol in Corridor. This will provide a static variable called `default` of Type Resolver to your Type in order to provide access.  
 This extension is done once in your app.
 
 ```swift
@@ -123,15 +124,14 @@ extension HasContext {
     static var `default`: Resolver<Self, AppContext> {
        return Resolver(context: DefaultContext())
     }
-
 }
 ```
 
-The visibility of any property in the context is controlled by extending
-either `HasInstanceContext` or `HasStaticContext` or any derived protocol.
-By using protocols we can constrain access very fine granular.
-Additionally it allows injecting of functions on top of it. 
-_See example playground._
+The visibility of any property in the context is controlled by extending either `HasInstanceContext` or `HasStaticContext` or any derived protocol.  
+
+By using protocols we can constrain access in a granular way. Additionally it allows for the injection of functions.  
+
+_See example CorridorDemo.playground._
 
 ```swift
 extension HasInstanceContext where Self.Context == AppContext  {
@@ -143,19 +143,16 @@ extension HasInstanceContext where Self.Context == AppContext  {
 }
 ```
 
-#### Changing the context
-In your actual code everything resolves to the `DefaultContext`.
-But in the test you need to make sure to switch that context.
+#### Changing the Context
+In your actual code everything resolves to the `DefaultContext`.  
+But in your Tests you need to make sure to switch to the mock context.  
 The simplest way is:
 
 ```swift
 var myController = withContext(Controller(), MockContext())
 ```
 
-Setting up the context in the Tests can easily be simplified by making
-the TestCase itself Context aware. Additionally you can build
-functions on top of that to make instantiation automagically with the
-correct Context.
+Setting up the context in the Tests can easily be simplified by making the TestCase itself Context aware. Additionally you can build functions on top of that to make instantiation automagically have the correct Context.
 
 ```swift
 extension HasContext {
@@ -163,17 +160,15 @@ extension HasContext {
     static var mock: Resolver<Self, AppContext> {
         return Resolver(context: MockContext())
     }
-
 }
 
 /// Extension for TestCase (e.g. subclass of XCTestCase)
-/// to provide easy access get controller with mock context
+/// to provide easy access to get controller with mock context
 extension HasInstanceAppContext where Self: TestCase {
-
 
     func withController<V>() -> V?
         where V: UIViewController, V: ManagedByStoryboard, V: HasInstanceAppContext {
-        /// A simplified function that will make sure your context is set.
+        /// A simplified function that will make sure your context is set
         return self.controller()
     }
 }
@@ -189,7 +184,7 @@ To integrate Corridor into your project using Carthage, add to your `Cartfile`:
 github "symentis/Corridor"
 ```
 
-See Carthage for further inststructions.
+See [Carthage](https://github.com/Carthage/Carthage) for further inststructions.
 
 ### Requirements
 Swift 4
@@ -203,4 +198,3 @@ Developed by: Elmar Kretzer
 ### License
 
 All modules are released under the MIT license. See LICENSE for details.
-

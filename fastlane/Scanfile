@@ -1,0 +1,4 @@
+project "Corridor.xcodeproj"
+scheme "CorridorTests"
+
+clean true
