@@ -19,17 +19,25 @@ extension HasContext {
 
 }
 
+extension HasInstanceContext where Context == MyContext {
+
+  var now: Date {
+    return resolve[\.now]
+  }
+}
+
 extension HasInstanceContext where Source == AType, Context == MyContext {
 
   var nested: Nested {
     return resolve[\.nested]
   }
+
 }
 
-extension HasInstanceContext where Source == Nested, Context == MyContext {
+extension HasInstanceContext where Source == BType, Context == MyContext {
 
-  var now: Date {
-    return resolve[\.now]
+  var inlineResolved: InlineResolver {
+    return resolve[InlineResolver()]
   }
 }
 

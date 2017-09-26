@@ -11,13 +11,25 @@ import Corridor
 
 class CorridorTests: XCTestCase {
 
-    func testInstanceNested() {
-      let t = AType()
-      assert(t.nested.now.timeIntervalSince(Date()) < 0.001)
+  func testClassWithInline() {
+    let t = BType()
+    assert(t.now.timeIntervalSince(Date()) < 0.001)
+    assert(t.inline.now.timeIntervalSince(Date()) < 0.001)
 
-      let m = withContext(AType(), Mock())
-      assert(m.nested.now == Date.distantPast)
-    }
+    let m = withContext(BType(), Mock())
+    assert(m.now == Date.distantPast)
+    assert(m.inline.now == Date.distantPast)
+  }
+
+  func testInstanceNested() {
+    let t = AType()
+    assert(t.now.timeIntervalSince(Date()) < 0.001)
+    assert(t.nested.now.timeIntervalSince(Date()) < 0.001)
+
+    let m = withContext(AType(), Mock())
+    assert(m.now == Date.distantPast)
+    assert(m.nested.now == Date.distantPast)
+  }
 
   func testStaticNested() {
     assert(StaticType.nested.now.timeIntervalSince(Date()) < 0.001)

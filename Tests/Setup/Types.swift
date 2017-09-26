@@ -16,6 +16,15 @@ struct AType: HasInstanceContext {
   var resolve = `default`
 }
 
+final class BType: HasInstanceContext {
+  var resolve = `default`
+  lazy var inline: InlineResolver = { inlineResolved }()
+}
+
 struct StaticType: HasStaticContext {
   static var resolve = `default`
+}
+
+struct InlineResolver: HasInstanceContext {
+  var resolve = `default`
 }
