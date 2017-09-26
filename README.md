@@ -32,12 +32,12 @@ class Controller: UIViewController {
 ```
 
 The Date in the example is _out of control_.
-Running a test for that Controller will always in a different Date.
-The Date is a placeholder for any Coeffect.
+Running a test for that Controller will always result in a different Date.
+In that case the _Date_ is just a placeholder for any Coeffect.
 
 Corridor tries to solve this problem by taking the concept of a Coreader and
 turning it into a Swift friendly implementation via protocols and a single property.
-What will it look like?
+_What will it look like?_
 
 ```swift
 class Controller: UIViewController, HasInstanceContext {
@@ -54,10 +54,11 @@ class Controller: UIViewController, HasInstanceContext {
 ### Steps to use Corridor
 
 #### Implement one protocol
-_Either_ one of the tow provided by Corridor or one you defined that extends one of those.
+_Either_ one of the two protocols provided by Corridor: `HasInstanceContext` or `HasStaticContext`.
+Or any convenience protocol that extends one of those.
 
 ####  Add one property
-Any type that gets access to a injected types need to know how to resolve it.
+Any type that gets access to a injected value need to know how to resolve it.
 This is done by providing a property called _resolve_.
 By default it should be set to ```var resolve = `default` ```.
 Why the backticks?
@@ -89,8 +90,8 @@ One for the running application, one for the test case.
 ```swift
 struct DefaultContext: AppContext {
 
-  /// The real current Date
   var now: Date {
+    // The real current Date
     return Date()
   }
 }
@@ -106,7 +107,9 @@ struct MockContext: AppContext {
 
 #### Resolver
 In order to provide the default resolver you must extend the base protocol in
-Corridor. This Part will provide a static resolver to your Type in order to provide access.
+Corridor. This will provide a static variable called `default` of Type Resolver 
+to your Type in order to provide access.
+This extension is done once in your app.
 
 ```swift
 extension HasContext {
@@ -122,6 +125,9 @@ extension HasContext {
 
 The visibility of any property in the context is controlled by extending
 either `HasInstanceContext` or `HasStaticContext` or any derived protocol.
+By using protocols we can constrain access very fine granular.
+Additionally it allows injecting of functions on top of it. 
+_See example playground._
 
 ```swift
 extension HasInstanceContext where Self.Context == AppContext  {
