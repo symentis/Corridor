@@ -196,5 +196,7 @@ Corridor is owned and maintained by [Symentis GmbH](http://symentis.com).
 Developed by: Elmar Kretzer
 [![Twitter](https://img.shields.io/badge/twitter-@elmkretzer-blue.svg?style=flat)](http://twitter.com/elmkretzer)
 
+### License
 
+All modules are released under the MIT license. See LICENSE for details.
 
