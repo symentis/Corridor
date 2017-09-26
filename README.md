@@ -1,23 +1,26 @@
 # Corridor
 
-A Coreader-like Dependency Injection Style
+## A Coreader-like Dependency Injection Style
 
-## Why
+### Why
 
-In order to trust our tests we must substitute parts of our code we do not have control over.
-Network calls, creating Dates, Keychain, DataStore directories and so forth all have one thing
-in common. We need to substitute them in tests in order to verify assumptions.
+In order to trust tests we must substitute parts of our code we do not have control over.
+Network calls, creating Dates, Keychain, DataStore directories and so forth all have one thing in common. 
+
+__We need to substitute them in tests in order to verify assumptions.__
 
 The purpose of Corridor is:
- - Provide a common interface for _things_ that need to be replaced in TestCases.
- - Simplify instance setup in TestCases without manually providing mocks et all.
- - Transparently provide the actual used context to all your Types.
- - Separate any kind of test related logic from actual running code.
+
+   - Provide a _common interface for things_ that need to be replaced in TestCases.
+  - Simplify _setup in TestCases_ without manually providing mocks et all.
+  - _Transparently provide the current context_ to all your Types.
+  - _Separate any kind of test related logic_ from actual running code.
 
 
-## Usage
+### Usage
 
 In an ideal World a Coeffect is under control.
+
 ```swift
 class Controller: UIViewController {
 
@@ -27,6 +30,7 @@ class Controller: UIViewController {
 
 }
 ```
+
 The Date in the example is _out of control_.
 Running a test for that Controller will always in a different Date.
 The Date is a placeholder for any Coeffect.
@@ -47,28 +51,26 @@ class Controller: UIViewController, HasInstanceContext {
 }
 ```
 
-## Steps
+### Steps to use Corridor
 
-Your changes:
-
-### Implement one protocol
+#### Implement one protocol
 _Either_ one of the tow provided by Corridor or one you defined that extends one of those.
 
-###  Add one property
+####  Add one property
 Any type that gets access to a injected types need to know how to resolve it.
 This is done by providing a property called _resolve_.
-By default it should be set to ```var resolve = `default` ````.
+By default it should be set to ```var resolve = `default` ```.
 Why the backticks?
 _default_ is a keyword and by using the backticks the property looks
 more _config-ish_.
 
-### Provide access by resolving
+#### Provide access by resolving
 In order to resolve, we need to define what can be resolved.
 You will see how resolving works in the next part.
 
-## Terminology
+### Terminology
 
-### Context
+#### Context
 A base protocol that defines your dependencies:
 
 ```swift
@@ -79,7 +81,7 @@ protocol AppContext {
 }
 ```
 
-### Context Implementation
+#### Context Implementation
 An implemention of a Context.
 Usually we two implementations.
 One for the running application, one for the test case.
@@ -102,7 +104,7 @@ struct MockContext: AppContext {
 }
 ```
 
-### Resolver
+#### Resolver
 In order to provide the default resolver you must extend the base protocol in
 Corridor. This Part will provide a static resolver to your Type in order to provide access.
 
@@ -131,7 +133,7 @@ extension HasInstanceContext where Self.Context == AppContext  {
 }
 ```
 
-### Changing the context
+#### Changing the context
 In your actual code everything resolves to the `DefaultContext`.
 But in the test you need to make sure to switch that context.
 The simplest way is:
@@ -167,9 +169,9 @@ extension HasInstanceAppContext where Self: TestCase {
 }
 ```
 
-## Installation
+### Installation
 
-### Carthage
+#### Carthage
 
 To integrate Corridor into your project using Carthage, add to your `Cartfile`:
 
@@ -179,10 +181,10 @@ github "symentis/Corridor"
 
 See Carthage for further inststructions.
 
-## Requirements
+### Requirements
 Swift 4
 
-## Credits
+### Credits
 Corridor is owned and maintained by [Symentis GmbH](http://symentis.com).
 
 Developed by: Elmar Kretzer
