@@ -80,7 +80,6 @@ more _config-ish_.
 
 ## Setup Context
 
-## Context
 A base protocol that defines your dependencies:
 
 ```swift
