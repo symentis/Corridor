@@ -7,6 +7,15 @@
 
 ## A Coreader-like Dependency Injection μFramework
 
+<p align="center">
+<a href="#why">Why</a> |
+<a href="#examples">Examples</a> |
+<a href="#usage">Usage</a> |
+<a href="#terminology">Terminology</a> |
+<a href="#installation">Installation</a> |
+<a href="#credits--license">Credits & License</a> |
+</p>
+
 ### Why
 
 In order to write tests we must substitute parts of our code that we do not have control over such as:
@@ -22,9 +31,6 @@ The purpose of Corridor is to:
 - Simplify _setup in TestCases_ without manually providing mocks etc
 - _Transparently provide the current context_ to all your Types
 - _Separate any kind of test related logic_ from production code
-
-
-### Usage
 
 In an ideal World a Coeffect is under control.
 
@@ -57,11 +63,11 @@ class Controller: UIViewController, HasInstanceContext {
 }
 ```
 
-### Playground
+### Examples
 
 See the provided Playground in the workspace for more examples.
 
-### Steps to use Corridor
+### Usage
 
 #### Implement a Protocol
 _Either_ one of the two protocols provided by Corridor: `HasInstanceContext` or `HasStaticContext`.  
@@ -186,15 +192,13 @@ github "symentis/Corridor"
 
 See [Carthage](https://github.com/Carthage/Carthage) for further inststructions.
 
-### Requirements
+#### Requirements
 Swift 4
 
-### Credits
+### Credits & License
 Corridor is owned and maintained by [Symentis GmbH](http://symentis.com).
 
 Developed by: Elmar Kretzer
 [![Twitter](https://img.shields.io/badge/twitter-@elmkretzer-blue.svg?style=flat)](http://twitter.com/elmkretzer)
-
-### License
 
 All modules are released under the MIT license. See LICENSE for details.
