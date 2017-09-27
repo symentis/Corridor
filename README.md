@@ -11,9 +11,8 @@ _A Coreader-like Dependency Injection μFramework_
 
 # Table of Contents
 <a href="#why">Why</a> |
-<a href="#examples">Examples</a> |
+<a href="#examples-from-playground">Examples</a> |
 <a href="#usage">Usage</a> |
-<a href="#terminology">Terminology</a> |
 <a href="#installation">Installation</a> |
 <a href="#credits--license">Credits & License</a> |
 </p>
@@ -64,11 +63,6 @@ class Controller: UIViewController, HasInstanceContext {
   }
 }
 ```
-
-# Examples
-
-See the provided Playground in the workspace for more examples.
-
 # Usage
 
 ## Implement a Protocol
@@ -84,7 +78,7 @@ By default it should be set to ```var resolve = `default` ```.
 _default_ is a swift keyword and by using the backticks the property looks
 more _config-ish_.
 
-# Terminology
+## Setup Context
 
 ## Context
 A base protocol that defines your dependencies:
@@ -180,6 +174,214 @@ extension HasInstanceAppContext where Self: TestCase {
         return self.controller()
     }
 }
+```
+
+# Examples from Playground
+
+See the provided Playground in the workspace.
+
+## Intro
+
+```swift
+import Foundation
+import UIKit
+import PlaygroundSupport
+import Corridor
+
+// 1. Protocol for Context 
+// e.g. AppContext.swift
+public protocol AppContext {
+  var now: Date { get }
+}
+
+// 2. Context Implementation for Running App
+// e.g. DefaultContext.swift
+struct DefaultContext: AppContext {
+  var now: Date { return Date() }
+}
+
+// 3. HasContext is Corridor base protocol
+// e.g. Resolver.swift
+extension HasContext {
+  typealias Context = AppContext
+  // provide default resolver
+  static var `default`: Resolver<Self, AppContext> {
+    return Resolver(context: DefaultContext())
+  }
+}
+
+// 4. Add resolvable values
+// e.g. Resolver.swift
+extension HasInstanceContext
+where Self.Context == AppContext {
+  var now: Date {
+    return resolve[\.now]
+  }
+}
+
+// 5. Usage
+final class Controller: LabelController, HasInstanceContext {
+  var resolve = `default`
+  override func viewWillAppear(_ animated: Bool) {
+    label.text = "Now is \(now)"
+  }
+}
+
+PlaygroundPage.current.liveView = Controller()
+```
+
+## Test
+
+```swift
+import Foundation
+import PlaygroundSupport
+import Corridor
+
+// 1. Context Implementation for Testing App
+struct MockContext: AppContext {
+  var now: Date { return Date.distantPast }
+}
+
+// 2. Usage
+let test = withContext(Controller(), MockContext())
+
+PlaygroundPage.current.liveView = test
+```
+
+## Api
+
+This example combines a `Reader` composition for chained REST calls.
+Defining the `Api` in `AppContext` and by implementing `ContextAware` it
+will have access to the current context.
+Therefore we don't need to pass additional params to the network calls, and
+it is ensured that all injected valus are correctly resolved.
+
+```swift
+import Foundation
+import UIKit
+import PlaygroundSupport
+import Corridor
+
+// 1. Protocol for Context
+protocol AppContext {
+  var now: Date { get }
+  var api: Api { get }
+}
+
+// 2. Context Implementation for Running App
+struct DefaultContext: AppContext {
+  var now: Date { return Date() }
+  var api: Api { return Api(connection: ServerConnection()) }
+}
+
+// 3. Context Implementation for Test App
+struct MockContext: AppContext {
+  var now: Date { return Date.distantPast }
+  var api: Api { return Api(connection: MockConnection()) }
+}
+
+// 4. Extend Corridor
+extension HasContext {
+  typealias Context = AppContext
+  static var `default`: Resolver<Self, AppContext> {
+    return Resolver(context: DefaultContext())
+  }
+}
+
+// 5. Convenience protocol
+protocol ContextAware: HasInstanceContext
+where Self.Context == AppContext {}
+
+// 6. Define API for (String) -> Future<T>
+struct Api: ContextAware {
+  var resolve = `default`
+  let connection: Connection
+  init(connection: Connection) {
+    self.connection = connection
+  }
+  var endpoint: Endpoint {
+    return connection.endpoint
+  }
+  func getResponse<T: Codable>(_ s: String) -> Future<T> {
+    return connection.getResponse(s)
+  }
+}
+
+// 7. Fake ReSwift Store
+var dispatched: Set<String> = Set()
+
+// 8. Extend Corridor
+extension ContextAware {
+  // Extract
+  var now: Date {
+    return resolve[\.now]
+  }
+  // Extend
+  var api: Api {
+    return resolve[\.api]
+  }
+  var dispatch: Dispatch {
+    return { dispatched.insert($0) }
+  }
+  var messages: String {
+    return dispatched.sorted().joined(separator: "\n")
+  }
+}
+
+// 9. Define API Operations
+typealias ApiAware<O> = Reader<Api, O>
+typealias ApiFuture<O> = ApiAware<Future<O>>
+typealias ApiBind<I, O> = (Future<I>) -> ApiFuture<O>
+
+func bind<I, O>(_ urlFrom: @escaping (I) -> String) -> ApiBind<I, O>
+  where O: Codable {
+    return { future in
+      ApiAware { api in
+        future.flatMap { input in
+          api.dispatch("\(api.now.formatted) \n -\(input)")
+          return api.getResponse(urlFrom(input))
+        }
+      }
+    }
+}
+
+let apiEntrypoint: ApiFuture<Endpoint> = ApiAware { api in
+  Future<Endpoint>(value: api.endpoint)
+}
+let usersEndpoint: ApiBind<Endpoint, UsersEndpoint> = bind {
+  $0.usersEndpoint
+}
+let firstUserEndpoint: ApiBind<UsersEndpoint, UserEndpoint> = bind {
+  $0.firstUserEndpoint
+}
+let addressEndpoint: ApiBind<UserEndpoint, AddressEndpoint> = bind {
+  $0.addressEndpoint
+}
+
+let apiCall = usersEndpoint >=> firstUserEndpoint >=> addressEndpoint
+
+// 10. Controller
+final class Controller: LabelController, ContextAware {
+
+  var resolve = `default`
+
+  override func viewWillAppear(_ animated: Bool) {
+
+    let address = apiEntrypoint
+      .flatMap(apiCall)
+      .run(api)
+
+    address.onSuccess { (s: Address) in
+      label.text = messages + "\n" + s
+
+    }
+  }
+}
+
+// 11. Run
+let app = Controller()
+let test = withContext(Controller(), MockContext())
+PlaygroundPage.current.liveView = app
 ```
 
 # Installation
