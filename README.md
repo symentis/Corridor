@@ -28,10 +28,10 @@ In order to write tests we must substitute parts of our code that we do not have
 __We need to substitute them in tests in order to verify assumptions.__
 
 The purpose of Corridor is to:
-- Provide a _common interface for things_ that need to be replaced in TestCases
-- Simplify _setup in TestCases_ without manually providing mocks etc
-- _Transparently provide the current context_ to all your Types
-- _Separate any kind of test related logic_ from production code
+- Provide a common interface for things that need to be replaced in TestCases
+- Simplify setup in TestCases without manually providing mocks etc
+- Transparently provide the current context to all your Types
+- Separate any kind of test related logic from production code
 
 In an ideal World a Coeffect is under control.
 
