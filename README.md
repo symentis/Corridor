@@ -1,13 +1,15 @@
-[![Build Status](https://travis-ci.org/elm4ward/Corridor.svg?branch=master)](https://travis-ci.org/elm4ward/Corridor)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![Language](https://img.shields.io/badge/language-Swift%204.0-orange.svg)
-[![@elmkretzer](https://img.shields.io/badge/twitter-@elmkretzer-blue.svg?style=flat)](http://twitter.com/elmkretzer)
+
 
 # Corridor
+_A Coreader-like Dependency Injection μFramework_
 
-## A Coreader-like Dependency Injection μFramework
+[![Build Status](https://travis-ci.org/elm4ward/Corridor.svg?branch=master)](https://travis-ci.org/elm4ward/Corridor)
+![Language](https://img.shields.io/badge/language-Swift%204.0-orange.svg)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![@elmkretzer](https://img.shields.io/badge/twitter-@elmkretzer-blue.svg?style=flat)](http://twitter.com/elmkretzer)
 
-<p align="center">
+
+# Table of Contents
 <a href="#why">Why</a> |
 <a href="#examples">Examples</a> |
 <a href="#usage">Usage</a> |
@@ -16,7 +18,7 @@
 <a href="#credits--license">Credits & License</a> |
 </p>
 
-### Why
+# Why
 
 In order to write tests we must substitute parts of our code that we do not have control over such as:
 - Network
@@ -63,17 +65,17 @@ class Controller: UIViewController, HasInstanceContext {
 }
 ```
 
-### Examples
+# Examples
 
 See the provided Playground in the workspace for more examples.
 
-### Usage
+# Usage
 
-#### Implement a Protocol
+## Implement a Protocol
 _Either_ one of the two protocols provided by Corridor: `HasInstanceContext` or `HasStaticContext`.  
 Or any convenience protocol that extends one of those.
 
-####  Add a Property
+##  Add a Property
 Any type that needs access to an injected value also needs to know how to resolve it. This is done by providing a property called _resolve_.  
 
 By default it should be set to ```var resolve = `default` ```.  
@@ -82,9 +84,9 @@ By default it should be set to ```var resolve = `default` ```.
 _default_ is a swift keyword and by using the backticks the property looks
 more _config-ish_.
 
-### Terminology
+# Terminology
 
-#### Context
+## Context
 A base protocol that defines your dependencies:
 
 ```swift
@@ -95,7 +97,7 @@ protocol AppContext {
 }
 ```
 
-#### Context Implementation
+## Context Implementation
 An implemention of a Context.
 Usually we use two implementations.
 One for the running application, one for the test cases.
@@ -118,7 +120,7 @@ struct MockContext: AppContext {
 }
 ```
 
-#### Resolver
+## Resolver
 In order to provide the default resolver you must extend the base protocol in Corridor. This will provide a static variable called `default` of Type Resolver to your Type in order to provide access.  
 This extension is done once in your app.
 
@@ -149,7 +151,7 @@ extension HasInstanceContext where Self.Context == AppContext  {
 }
 ```
 
-#### Changing the Context
+## Changing the Context
 In your actual code everything resolves to the `DefaultContext`.  
 But in your Tests you need to make sure to switch to the mock context.  
 The simplest way is:
@@ -180,9 +182,9 @@ extension HasInstanceAppContext where Self: TestCase {
 }
 ```
 
-### Installation
+# Installation
 
-#### Carthage
+## Carthage
 
 To integrate Corridor into your project using Carthage, add to your `Cartfile`:
 
@@ -192,10 +194,10 @@ github "symentis/Corridor"
 
 See [Carthage](https://github.com/Carthage/Carthage) for further inststructions.
 
-#### Requirements
+# Requirements
 Swift 4
 
-### Credits & License
+# Credits & License
 Corridor is owned and maintained by [Symentis GmbH](http://symentis.com).
 
 Developed by: Elmar Kretzer
