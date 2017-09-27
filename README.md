@@ -3,7 +3,7 @@
 # Corridor
 _A Coreader-like Dependency Injection μFramework_
 
-[![Build Status](https://travis-ci.org/elm4ward/Corridor.svg?branch=master)](https://travis-ci.org/elm4ward/Corridor)
+[![Build Status](https://travis-ci.org/symentis/Corridor.svg?branch=master)](https://travis-ci.org/symentis/Corridor)
 ![Language](https://img.shields.io/badge/language-Swift%204.0-orange.svg)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![@elmkretzer](https://img.shields.io/badge/twitter-@elmkretzer-blue.svg?style=flat)](http://twitter.com/elmkretzer)
