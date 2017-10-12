@@ -64,8 +64,7 @@ class Controller: UIViewController, HasInstanceContext {
 }
 ```
 
-The idea behind Corridor was part of my talk at the Functional Swift Conference 2017 in Berlin.
-Watch the video for seeing it in action.
+The idea behind Corridor was part of my talk at the [Functional Swift Conference 2017](http://2017-fall.funswiftconf.com) in Berlin.
 
 [![Reader and Coreader for Dependency Injection](https://img.youtube.com/vi/oPyqKETp3ks/0.jpg)](https://www.youtube.com/watch?v=oPyqKETp3ks)
 
