@@ -34,13 +34,6 @@ extension HasInstanceContext where Source == AType, Context == MyContext {
 
 }
 
-extension HasInstanceContext where Source == BType, Context == MyContext {
-
-  var inlineResolved: InlineResolver {
-    return resolve[InlineResolver()]
-  }
-}
-
 extension HasStaticContext where Source == StaticType, Context == MyContext {
 
   static var nested: Nested {

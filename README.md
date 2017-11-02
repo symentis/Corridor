@@ -1,5 +1,4 @@
 
-
 # Corridor
 _A Coreader-like Dependency Injection μFramework_
 
@@ -387,6 +386,23 @@ let app = Controller()
 let test = withContext(Controller(), MockContext())
 PlaygroundPage.current.liveView = app
 ```
+
+# FAQ
+
+### What if a property needs to be resolved to the context?
+
+You can use  `lazy var` to resolve properties directly.
+_See Tests._
+
+```swift
+
+final class MyClass: HasInstanceContext {
+  var resolve = `default`
+
+  lazy var contextAwareProperty = resolve[AnotherContextAwareClass()]
+}
+```
+
 
 # Installation
 

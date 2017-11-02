@@ -18,7 +18,7 @@ struct AType: HasInstanceContext {
 
 final class BType: HasInstanceContext {
   var resolve = `default`
-  lazy var inline: InlineResolver = { inlineResolved }()
+  lazy var inline: InlineResolver = resolve[InlineResolver()]
 }
 
 struct StaticType: HasStaticContext {
