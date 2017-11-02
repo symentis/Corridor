@@ -1,5 +1,4 @@
 
-
 # Corridor
 _A Coreader-like Dependency Injection μFramework_
 
